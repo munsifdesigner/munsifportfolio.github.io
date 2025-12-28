@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammad Munsif - Professional Graphic Designer crafting high-impact visuals for digital brands and global audiences. Social media design, branding, and marketing graphics.">
+    <meta name="keywords" content="Graphic Designer, Social Media Design, Brand Identity, Visual Design, Marketing Graphics, International Designer, Freelance Designer">
+    <meta name="author" content="Muhammad Munsif">
+    <title>Muhammad Munsif | Professional Graphic Designer for Global Brands</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #FAFAF9;
+            --bg-secondary: #F5F5F4;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --text-muted: #A8A29E;
+            --accent: #292524;
+            --accent-warm: #C2410C;
+        }
+        
+        * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        /* Premium gradient background */
+        .hero-gradient {
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(120, 119, 198, 0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(255, 166, 158, 0.1), transparent),
+                radial-gradient(ellipse 50% 30% at 0% 100%, rgba(162, 155, 254, 0.08), transparent);
+        }
+        
+        /* Animated gradient orbs */
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(199, 210, 254, 0.4), rgba(254, 202, 202, 0.3));
+            top: -200px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+        
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(254, 215, 170, 0.3), rgba(196, 181, 253, 0.2));
+            bottom: -100px;
+            left: -100px;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 10px) scale(1.02); }
+        }
+        
+        /* Text reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        
+        /* Premium underline effect */
+        .premium-link {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .premium-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .premium-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Premium button styles */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-premium:hover::before {
+            left: 100%;
+        }
+        
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.2);
+        }
+        
+        /* Portfolio card premium hover */
+        .portfolio-item {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+        }
+        
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-image {
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Service card hover */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.08);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-icon {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Process step animation */
+        .process-step {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .process-step:hover {
+            transform: translateX(8px);
+        }
+        
+        .process-step:hover .step-number {
+            background: var(--text-primary);
+            color: white;
+        }
+        
+        /* Tool icon hover */
+        .tool-item {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .tool-item:hover {
+            transform: translateY(-6px);
+        }
+        
+        /* Magnetic button effect */
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-muted);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+        
+        /* Selection color */
+        ::selection {
+            background: var(--text-primary);
+            color: white;
+        }
+        
+        /* Marquee animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .marquee-track {
+            animation: marquee 30s linear infinite;
+        }
+        
+        /* Line animation */
+        .animated-line {
+            background: linear-gradient(90deg, transparent, var(--text-primary), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center py-5">
+                <a href="#" class="text-xl font-semibold tracking-tight text-stone-900">
+                    Munsif<span class="text-stone-400">.</span>
+                </a>
+                
+                <div class="hidden md:flex items-center gap-10">
+                    <a href="#work" class="premium-link text-sm text-stone-600 hover:text-stone-900 transition-colors">Work</a>
+                    <a href="#services" class="premium-link text-sm text-stone-600 hover:text-stone-900 transition-colors">Services</a>
+                    <a href="#about" class="premium-link text-sm text-stone-600 hover:text-stone-900 transition-colors">About</a>
+                    <a href="#process" class="premium-link text-sm text-stone-600 hover:text-stone-900 transition-colors">Process</a>
+                    <a href="#contact" class="btn-premium bg-stone-900 text-white px-6 py-2.5 rounded-full text-sm font-medium">
+                        Start a Project
+                    </a>
+                </div>
+                
+                <button id="menu-toggle" class="md:hidden w-10 h-10 flex items-center justify-center">
+                    <div class="space-y-1.5">
+                        <span class="block w-6 h-0.5 bg-stone-900 transition-all" id="line1"></span>
+                        <span class="block w-6 h-0.5 bg-stone-900 transition-all" id="line2"></span>
+                    </div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-stone-100">
+            <div class="px-6 py-8 space-y-6">
+                <a href="#work" class="block text-2xl font-medium text-stone-900">Work</a>
+                <a href="#services" class="block text-2xl font-medium text-stone-900">Services</a>
+                <a href="#about" class="block text-2xl font-medium text-stone-900">About</a>
+                <a href="#process" class="block text-2xl font-medium text-stone-900">Process</a>
+                <a href="#contact" class="inline-block bg-stone-900 text-white px-8 py-4 rounded-full text-lg font-medium">Start a Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+        <!-- Animated gradient orbs -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-12 py-32 md:py-40">
+            <div class="max-w-5xl">
+                <!-- Eyebrow -->
+                <div class="reveal mb-6">
+                    <span class="inline-flex items-center gap-2 text-sm text-stone-500 tracking-wide uppercase">
+                        <span class="w-8 h-px bg-stone-400"></span>
+                        Graphic Designer
+                    </span>
+                </div>
+                
+                <!-- Main Headline -->
+                <h1 class="reveal reveal-delay-1 text-4xl md:text-6xl lg:text-7xl font-medium text-stone-900 leading-[1.1] tracking-tight mb-8">
+                    Helping Brands Stand Out<br>
+                    <span class="font-display italic text-stone-600">Through Powerful</span><br>
+                    Visual Design
+                </h1>
+                
+                <!-- Subheading -->
+                <p class="reveal reveal-delay-2 text-lg md:text-xl text-stone-500 max-w-2xl leading-relaxed mb-12">
+                    Professional Graphic Designer with 1+ years of experience crafting high-impact visuals for digital brands and global audiences.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4">
+                    <a href="#work" class="btn-premium inline-flex items-center justify-center gap-3 bg-stone-900 text-white px-8 py-4 rounded-full font-medium text-base">
+                        View Selected Work
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn-premium inline-flex items-center justify-center gap-3 bg-white text-stone-900 px-8 py-4 rounded-full font-medium text-base border border-stone-200 hover:border-stone-900">
+                        Hire for Your Project
+                    </a>
+                </div>
+                
+                <!-- Stats -->
+                <div class="reveal reveal-delay-4 mt-20 flex flex-wrap gap-12 md:gap-20">
+                    <div>
+                        <p class="text-4xl md:text-5xl font-medium text-stone-900">1+</p>
+                        <p class="text-sm text-stone-500 mt-1">Years Experience</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-medium text-stone-900">50+</p>
+                        <p class="text-sm text-stone-500 mt-1">Projects Delivered</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl md:text-5xl font-medium text-stone-900">100%</p>
+                        <p class="text-sm text-stone-500 mt-1">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-400">
+            <span class="text-xs uppercase tracking-widest">Scroll</span>
+            <div class="w-px h-12 bg-gradient-to-b from-stone-400 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Marquee Section -->
+    <section class="py-8 bg-stone-900 overflow-hidden">
+        <div class="marquee-track flex gap-12 whitespace-nowrap">
+            <span class="text-stone-500 text-sm uppercase tracking-widest flex items-center gap-12">
+                <span>Social Media Design</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Brand Identity</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Marketing Graphics</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Visual Direction</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Campaign Creatives</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Thumbnails</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+            </span>
+            <span class="text-stone-500 text-sm uppercase tracking-widest flex items-center gap-12">
+                <span>Social Media Design</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Brand Identity</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Marketing Graphics</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Visual Direction</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Campaign Creatives</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+                <span>Thumbnails</span>
+                <span class="w-2 h-2 rounded-full bg-stone-600"></span>
+            </span>
+        </div>
+    </section>
+
+    <!-- Selected Work / Portfolio -->
+    <section id="work" class="py-24 md:py-32 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16">
+                <div class="reveal">
+                    <span class="text-sm text-stone-500 uppercase tracking-widest mb-4 block">Portfolio</span>
+                    <h2 class="text-4xl md:text-5xl font-medium text-stone-900 tracking-tight">
+                        Selected Work
+                    </h2>
+                </div>
+                <div class="reveal reveal-delay-1 flex flex-wrap gap-3">
+                    <button class="filter-btn active px-5 py-2 rounded-full text-sm font-medium bg-stone-900 text-white transition-all" data-filter="all">All Projects</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all" data-filter="social">Social Media</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all" data-filter="branding">Branding</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all" data-filter="marketing">Marketing</button>
+                    <button class="filter-btn px-5 py-2 rounded-full text-sm font-medium bg-stone-100 text-stone-600 hover:bg-stone-200 transition-all" data-filter="thumbnails">Thumbnails</button>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="portfolio-item reveal group cursor-pointer" data-category="social">
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop" alt="Social Media Campaign" class="portfolio-image w-full h-full object-cover">
+                        <div class="portfolio-overlay absolute inset-0 bg-stone-900/80 opacity-0 transition-opacity duration-500 flex items-end p-8">
+                            <div>
+                                <span class="text-stone-400 text-sm uppercase tracking-wider">Instagram</span>
+                                <h3 class="text-white text-2xl font-medium mt-2">Social Media Campaign</h3>
+                                <p class="text-stone-300 mt-2">Engagement-focused visual content series</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item reveal reveal-delay-1 group cursor-pointer" data-category="branding">
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=800&h=600&fit=crop" alt="Brand Identity System" class="portfolio-image w-full h-full object-cover">
+                        <div class="portfolio-overlay absolute inset-0 bg-stone-900/80 opacity-0 transition-opacity duration-500 flex items-end p-8">
+                            <div>
+                                <span class="text-stone-400 text-sm uppercase tracking-wider">Branding</span>
+                                <h3 class="text-white text-2xl font-medium mt-2">Brand Identity System</h3>
+                                <p class="text-stone-300 mt-2">Complete visual identity package</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item reveal group cursor-pointer" data-category="marketing">
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop" alt="Digital Campaign" class="portfolio-image w-full h-full object-cover">
+                        <div class="portfolio-overlay absolute inset-0 bg-stone-900/80 opacity-0 transition-opacity duration-500 flex items-end p-8">
+                            <div>
+                                <span class="text-stone-400 text-sm uppercase tracking-wider">Marketing</span>
+                                <h3 class="text-white text-2xl font-medium mt-2">Digital Ad Campaign</h3>
+                                <p class="text-stone-300 mt-2">Conversion-focused advertising creatives</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-item reveal reveal-delay-1 group cursor-pointer" data-category="thumbnails">
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800&h=600&fit=crop" alt="YouTube Thumbnails" class="portfolio-image w-full h-full object-cover">
+                        <div class="portfolio-overlay absolute inset-0 bg-stone-900/80 opacity-0 transition-opacity duration-500 flex items-end p-8">
+                            <div>
+                                <span class="text-stone-400 text-sm uppercase tracking-wider">YouTube</span>
+                                <h3 class="text-white text-2xl font-medium mt-2">Thumbnail Collection</h3>
+                                <p class="text-stone-300 mt-2">Click-optimized promotional graphics</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-item reveal group cursor-pointer" data-category="social">
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?w=800&h=600&fit=crop" alt="Content Series" class="portfolio-image w-full h-full object-cover">
+                        <div class="portfolio-overlay absolute inset-0 bg-stone-900/80 opacity-0 transition-opacity duration-500 flex items-end p-8">
+                            <div>
+                                <span class="text-stone-400 text-sm uppercase tracking-wider">Facebook</span>
+                                <h3 class="text-white text-2xl font-medium mt-2">Content Series</h3>
+                                <p class="text-stone-300 mt-2">Lifestyle brand visual content</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-item reveal reveal-delay-1 group cursor-pointer" data-category="branding">
+                    <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&h=600&fit=crop" alt="Event Branding" class="portfolio-image w-full h-full object-cover">
+                        <div class="portfolio-overlay absolute inset-0 bg-stone-900/80 opacity-0 transition-opacity duration-500 flex items-end p-8">
+                            <div>
+                                <span class="text-stone-400 text-sm uppercase tracking-wider">Poster Design</span>
+                                <h3 class="text-white text-2xl font-medium mt-2">Event Branding</h3>
+                                <p class="text-stone-300 mt-2">Campaign promotional materials</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View All -->
+            <div class="text-center mt-16 reveal">
+                <a href="#contact" class="inline-flex items-center gap-2 text-stone-900 font-medium premium-link">
+                    Interested in seeing more?
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 md:py-32 px-6 lg:px-12 bg-stone-50">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="max-w-3xl mb-20 reveal">
+                <span class="text-sm text-stone-500 uppercase tracking-widest mb-4 block">Services</span>
+                <h2 class="text-4xl md:text-5xl font-medium text-stone-900 tracking-tight mb-6">
+                    Design Solutions for<br>
+                    <span class="font-display italic text-stone-600">Global Brands</span>
+                </h2>
+                <p class="text-lg text-stone-500 leading-relaxed">
+                    Specialized design services crafted to help businesses establish strong visual presence and connect with their audiences effectively.
+                </p>
+            </div>
+            
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-100 reveal">
+                    <div class="service-icon w-14 h-14 rounded-xl bg-stone-900 flex items-center justify-center mb-6">
+                        <i class="fas fa-hashtag text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Social Media Creative Design</h3>
+                    <p class="text-stone-500 leading-relaxed">Scroll-stopping visuals optimized for engagement across Instagram, Facebook, LinkedIn and beyond.</p>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-100 reveal reveal-delay-1">
+                    <div class="service-icon w-14 h-14 rounded-xl bg-stone-900 flex items-center justify-center mb-6">
+                        <i class="fas fa-fingerprint text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Brand Identity & Visual Direction</h3>
+                    <p class="text-stone-500 leading-relaxed">Cohesive visual systems that communicate your brand values and establish market authority.</p>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-100 reveal reveal-delay-2">
+                    <div class="service-icon w-14 h-14 rounded-xl bg-stone-900 flex items-center justify-center mb-6">
+                        <i class="fas fa-bullhorn text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Marketing & Advertising Graphics</h3>
+                    <p class="text-stone-500 leading-relaxed">High-converting visuals designed to drive results for paid campaigns and organic reach.</p>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-100 reveal">
+                    <div class="service-icon w-14 h-14 rounded-xl bg-stone-900 flex items-center justify-center mb-6">
+                        <i class="fas fa-layer-group text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Posters, Banners & Campaign Creatives</h3>
+                    <p class="text-stone-500 leading-relaxed">Eye-catching promotional materials for events, launches and digital advertising.</p>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-100 reveal reveal-delay-1">
+                    <div class="service-icon w-14 h-14 rounded-xl bg-stone-900 flex items-center justify-center mb-6">
+                        <i class="fas fa-play text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Thumbnails & Promotional Visuals</h3>
+                    <p class="text-stone-500 leading-relaxed">Click-worthy thumbnails and graphics that maximize views and engagement.</p>
+                </div>
+                
+                <div class="service-card bg-white rounded-2xl p-8 border border-stone-100 reveal reveal-delay-2">
+                    <div class="service-icon w-14 h-14 rounded-xl bg-stone-900 flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Content Visuals for Online Platforms</h3>
+                    <p class="text-stone-500 leading-relaxed">Digital content designed for websites, newsletters and multi-channel campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 md:py-32 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Image -->
+                <div class="reveal order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-stone-200">
+                            <div class="absolute inset-0 bg-gradient-to-br from-stone-300 via-stone-400 to-stone-500 flex items-center justify-center">
+                                <span class="text-[180px] font-display font-bold text-white/20">M</span>
+                            </div>
+                        </div>
+                        <!-- Floating badge -->
+                        <div class="absolute -bottom-6 -right-6 bg-stone-900 text-white px-6 py-4 rounded-2xl shadow-2xl">
+                            <p class="text-3xl font-semibold">1+</p>
+                            <p class="text-sm text-stone-400">Years of Excellence</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="order-1 lg:order-2">
+                    <div class="reveal">
+                        <span class="text-sm text-stone-500 uppercase tracking-widest mb-4 block">About</span>
+                        <h2 class="text-4xl md:text-5xl font-medium text-stone-900 tracking-tight mb-8">
+                            Muhammad Munsif
+                        </h2>
+                    </div>
+                    
+                    <div class="space-y-6 reveal reveal-delay-1">
+                        <p class="text-lg text-stone-600 leading-relaxed">
+                            Professional Graphic Designer with over one year of practical experience designing visual content for social media, digital marketing and brand communication.
+                        </p>
+                        <p class="text-lg text-stone-600 leading-relaxed">
+                            I specialize in creating clean, modern and conversion-focused designs that help brands build strong online presence. My work emphasizes clarity, consistency and visual storytelling.
+                        </p>
+                        <p class="text-lg text-stone-600 leading-relaxed">
+                            Currently focused on working with international clients, delivering reliable, high-quality design solutions aligned with global standards.
+                        </p>
+                    </div>
+                    
+                    <!-- Experience Highlights -->
+                    <div class="mt-12 reveal reveal-delay-2">
+                        <h3 class="text-sm text-stone-500 uppercase tracking-widest mb-6">Experience & Expertise</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-2 h-2 rounded-full bg-stone-900 mt-2 shrink-0"></div>
+                                <p class="text-stone-600">Designed high-quality visuals for social media brands, online pages and digital campaigns</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-2 h-2 rounded-full bg-stone-900 mt-2 shrink-0"></div>
+                                <p class="text-stone-600">Created consistent brand-aligned creatives for multiple platforms</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-2 h-2 rounded-full bg-stone-900 mt-2 shrink-0"></div>
+                                <p class="text-stone-600">Delivered professional assets optimized for engagement and marketing use</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-2 h-2 rounded-full bg-stone-900 mt-2 shrink-0"></div>
+                                <p class="text-stone-600">Worked with diverse content styles including motivation, business and lifestyle visuals</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-2 h-2 rounded-full bg-stone-900 mt-2 shrink-0"></div>
+                                <p class="text-stone-600">Maintained fast turnaround times and client-focused revisions</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10 reveal reveal-delay-3">
+                        <a href="#contact" class="btn-premium inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 rounded-full font-medium">
+                            Work With Me
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technology -->
+    <section class="py-24 md:py-32 px-6 lg:px-12 bg-stone-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-sm text-stone-500 uppercase tracking-widest mb-4 block">Tools & Technology</span>
+                <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight">
+                    Powered by Industry-Leading Software
+                </h2>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+                <div class="tool-item bg-stone-800/50 backdrop-blur rounded-2xl p-8 text-center w-36 md:w-44 reveal">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <svg viewBox="0 0 240 234" class="w-full h-full">
+                            <path fill="#31A8FF" d="M42.5 0h155C221 0 240 19 240 42.5v149c0 23.5-19 42.5-42.5 42.5h-155C19 234 0 215 0 191.5v-149C0 19 19 0 42.5 0z"/>
+                            <path fill="#001E36" d="M54 164.1V61.2c0-.7.3-1.1 1-1.1 1.7 0 3.3 0 5.6-.1 2.4-.1 4.9-.1 7.6-.2 2.7-.1 5.6-.1 8.7-.2 3.1-.1 6.1-.1 9.1-.1 8.2 0 15 1 20.6 3.1 5 1.7 9.6 4.5 13.4 8.2 3.2 3.2 5.7 7.1 7.3 11.4 1.5 4.2 2.3 8.5 2.3 13 0 8.6-2 15.7-6 21.3s-9.6 9.8-16.1 12.2c-6.8 2.5-14.3 3.4-22.5 3.4-2.4 0-4 0-5-.1-1-.1-2.4-.1-4.3-.1v32.1c.1.7-.4 1.3-1.1 1.4H55.1c-.8 0-1.1-.4-1.1-1.3zm21.8-84.7V113c1.4.1 2.7.2 3.9.2h5c3.9 0 7.8-.6 11.5-1.8 3.2-1 6-2.8 8.2-5.3 2.1-2.5 3.1-5.8 3.1-10.1 0-3.5-.8-6.6-2.3-9.3-1.6-2.6-4-4.7-6.8-5.8-3.4-1.4-7.1-2-10.8-1.9-2.5 0-4.7 0-6.6.1-1.9.1-3.6.2-5.2.3zM192.1 118.3c-3.2-1.9-6.6-3.4-10.2-4.4-3.8-1.1-7.8-1.7-11.8-1.7-2.4-.1-4.7.3-6.9 1.2-1.5.6-2.5 2-2.6 3.6-.1 1.1.4 2.2 1.3 3 1.3 1.1 2.8 2 4.4 2.7 2.3 1 5.5 2.3 9.6 3.9 5.6 1.9 10.9 4.4 15.9 7.6 3.3 2.2 6 5.1 7.9 8.5 1.6 3.2 2.4 6.7 2.3 10.3.1 5-1.3 9.9-4.2 14-3.1 4.3-7.4 7.5-12.3 9.4-5.4 2.2-11.8 3.3-19.3 3.3-5.2 0-10.3-.5-15.4-1.6-4.3-.9-8.5-2.4-12.3-4.5-.6-.4-1-1.1-1-1.8v-17.4c0-.3.1-.6.4-.8.3-.2.6-.2.8 0 4.3 2.7 9 4.7 13.9 6 4.4 1.2 8.9 1.8 13.5 1.8 4 0 6.8-.5 8.4-1.6 1.5-.9 2.5-2.5 2.5-4.3 0-1.4-.7-2.7-1.8-3.6-1.5-1.2-3.2-2.3-5-3.1-2.5-1.1-5.8-2.4-10-4.1-5.3-2-10.3-4.5-14.9-7.7-3.1-2.2-5.6-5-7.4-8.4-1.6-3.2-2.4-6.8-2.3-10.4-.1-4.5 1.2-8.9 3.7-12.7 2.7-4.1 6.5-7.3 10.9-9.3 4.8-2.3 10.7-3.5 17.5-3.5 4.8 0 9.5.4 14.2 1.3 3.6.7 7.1 1.8 10.4 3.3.4.1.7.5.8.9.1.3.1.7.1 1v16.4c0 .4-.2.7-.5.9-.4.2-.8.2-1.2 0z"/>
+                        </svg>
+                    </div>
+                    <p class="text-white font-medium">Photoshop</p>
+                </div>
+                
+                <div class="tool-item bg-stone-800/50 backdrop-blur rounded-2xl p-8 text-center w-36 md:w-44 reveal reveal-delay-1">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <svg viewBox="0 0 240 234" class="w-full h-full">
+                            <path fill="#FF9A00" d="M42.5 0h155C221 0 240 19 240 42.5v149c0 23.5-19 42.5-42.5 42.5h-155C19 234 0 215 0 191.5v-149C0 19 19 0 42.5 0z"/>
+                            <path fill="#330000" d="M116 140.4l-15.9 47.2c-.3.9-.9 1.1-1.7 1.1H82.9c-.9 0-1.1-.5-.9-1.4l42.3-123.6c.4-1.2.7-2.3 1-5.5 0-.5.3-.8.7-.8h21.7c.7 0 1 .2 1.2.8l47.4 129.2c.3.8.1 1.2-.7 1.2h-18.6c-.7.1-1.2-.3-1.4-.9l-16.5-47.3H116zm40.4-17.6c-4.2-13.5-9.2-27.4-12.3-39.2h-.2c-2.7 11.4-7.5 25.6-11.9 39.2h24.4zM77.4 104.4c0-2.6-.2-6.9-.5-10.8-.1-.6-.4-.9-.9-.9H54.3c-.6 0-.9.2-.9.8v10.1c0 .7.2 1 .9 1h10.4v45.3c-2.8 1.3-6 2.1-9.2 2.1-8.6 0-14.5-4.2-14.5-21.1 0-13.5 4.4-20.2 13.3-20.2 3.5-.1 7 .8 10.1 2.5.5.3.9.3 1.1-.4l2.4-9.8c.2-.6.1-.9-.3-1.2-3.5-2.1-8.6-3.5-15.1-3.5-17.8 0-28.8 10.6-28.8 32.9 0 20.7 9 31 27.1 31 8.1.2 16.2-1.6 23.5-5.2.7-.3 1-.6 1-1.4l.1-51.2z"/>
+                        </svg>
+                    </div>
+                    <p class="text-white font-medium">Illustrator</p>
+                </div>
+                
+                <div class="tool-item bg-stone-800/50 backdrop-blur rounded-2xl p-8 text-center w-36 md:w-44 reveal reveal-delay-2">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <svg viewBox="0 0 240 234" class="w-full h-full">
+                            <path fill="#9999FF" d="M42.5 0h155C221 0 240 19 240 42.5v149c0 23.5-19 42.5-42.5 42.5h-155C19 234 0 215 0 191.5v-149C0 19 19 0 42.5 0z"/>
+                            <path fill="#000033" d="M182.1 60H135v53.3h47.1V60zm0 60.7H135V174h47.1v-53.3zM128.4 60H81.3v53.3h47.1V60zm0 60.7H81.3V174h47.1v-53.3zM74.7 120.7H57.9V174h16.8v-53.3z"/>
+                        </svg>
+                    </div>
+                    <p class="text-white font-medium">Premiere Pro</p>
+                </div>
+                
+                <div class="tool-item bg-stone-800/50 backdrop-blur rounded-2xl p-8 text-center w-36 md:w-44 reveal reveal-delay-3">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-stone-700 to-stone-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">CC</span>
+                    </div>
+                    <p class="text-white font-medium">CapCut</p>
+                </div>
+                
+                <div class="tool-item bg-stone-800/50 backdrop-blur rounded-2xl p-8 text-center w-36 md:w-44 reveal reveal-delay-4">
+                    <div class="w-16 h-16 mx-auto mb-4">
+                        <svg viewBox="0 0 24 24" class="w-full h-full">
+                            <path fill="#00C4CC" d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm5.5 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm5 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-5 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+                        </svg>
+                    </div>
+                    <p class="text-white font-medium">Canva</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Process -->
+    <section id="process" class="py-24 md:py-32 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Content -->
+                <div>
+                    <div class="reveal">
+                        <span class="text-sm text-stone-500 uppercase tracking-widest mb-4 block">Work Process</span>
+                        <h2 class="text-4xl md:text-5xl font-medium text-stone-900 tracking-tight mb-6">
+                            How I Deliver<br>
+                            <span class="font-display italic text-stone-600">Exceptional Results</span>
+                        </h2>
+                    </div>
+                    <p class="text-lg text-stone-500 leading-relaxed reveal reveal-delay-1">
+                        A streamlined, transparent process designed to ensure every project exceeds expectations while maintaining clear communication at every stage.
+                    </p>
+                </div>
+                
+                <!-- Process Steps -->
+                <div class="space-y-6">
+                    <div class="process-step flex items-start gap-6 p-6 rounded-2xl hover:bg-stone-50 reveal">
+                        <div class="step-number w-12 h-12 rounded-full border-2 border-stone-200 flex items-center justify-center text-lg font-semibold text-stone-900 shrink-0 transition-all">
+                            01
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-stone-900 mb-2">Understanding Goals & Brand</h3>
+                            <p class="text-stone-500">Deep dive into your objectives, target audience and brand essence to establish clear direction.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step flex items-start gap-6 p-6 rounded-2xl hover:bg-stone-50 reveal reveal-delay-1">
+                        <div class="step-number w-12 h-12 rounded-full border-2 border-stone-200 flex items-center justify-center text-lg font-semibold text-stone-900 shrink-0 transition-all">
+                            02
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-stone-900 mb-2">Visual Research & Concept Planning</h3>
+                            <p class="text-stone-500">Curating references and developing creative concepts aligned with your vision.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step flex items-start gap-6 p-6 rounded-2xl hover:bg-stone-50 reveal reveal-delay-2">
+                        <div class="step-number w-12 h-12 rounded-full border-2 border-stone-200 flex items-center justify-center text-lg font-semibold text-stone-900 shrink-0 transition-all">
+                            03
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-stone-900 mb-2">Design Execution with Precision</h3>
+                            <p class="text-stone-500">Crafting pixel-perfect designs with attention to every detail and brand consistency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step flex items-start gap-6 p-6 rounded-2xl hover:bg-stone-50 reveal reveal-delay-3">
+                        <div class="step-number w-12 h-12 rounded-full border-2 border-stone-200 flex items-center justify-center text-lg font-semibold text-stone-900 shrink-0 transition-all">
+                            04
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-stone-900 mb-2">Review, Refine & Final Delivery</h3>
+                            <p class="text-stone-500">Collaborative feedback rounds and delivery of polished, ready-to-use assets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="py-24 md:py-32 px-6 lg:px-12 bg-stone-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16 reveal">
+                <span class="text-sm text-stone-500 uppercase tracking-widest mb-4 block">Background</span>
+                <h2 class="text-4xl md:text-5xl font-medium text-stone-900 tracking-tight">
+                    Education
+                </h2>
+            </div>
+            
+            <div class="max-w-2xl mx-auto grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-8 border border-stone-100 reveal">
+                    <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-stone-700 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">BSCS</h3>
+                    <p class="text-stone-500">4th Semester — Ongoing</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 border border-stone-100 reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-certificate text-stone-700 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Diploma in IT</h3>
+                    <p class="text-stone-500">Information Technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision / CTA Section -->
+    <section class="py-24 md:py-32 px-6 lg:px-12 relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto text-center relative">
+            <div class="reveal">
+                <span class="text-sm text-stone-500 uppercase tracking-widest mb-6 block">Professional Vision</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium text-stone-900 tracking-tight mb-8 leading-tight">
+                    Seeking International Clients &<br>
+                    <span class="font-display italic text-stone-600">Long-Term Collaborations</span>
+                </h2>
+                <p class="text-xl text-stone-500 leading-relaxed mb-12 max-w-2xl mx-auto">
+                    Focused on delivering professional, scalable and brand-driven design solutions to global businesses. Let's create something exceptional together.
+                </p>
+                <a href="#contact" class="btn-premium inline-flex items-center gap-3 bg-stone-900 text-white px-10 py-5 rounded-full font-medium text-lg">
+                    Start Your Project
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 px-6 lg:px-12 bg-stone-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Contact Info -->
+                <div>
+                    <div class="reveal">
+                        <span class="text-sm text-stone-500 uppercase tracking-widest mb-4 block">Contact</span>
+                        <h2 class="text-4xl md:text-5xl font-medium text-white tracking-tight mb-6">
+                            Let's Build Something<br>
+                            <span class="font-display italic text-stone-400">Visually Powerful</span>
+                        </h2>
+                        <p class="text-lg text-stone-400 leading-relaxed mb-12">
+                            Ready to elevate your brand with professional design? Let's discuss how I can help bring your vision to life.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6 reveal reveal-delay-1">
+                        <a href="mailto:munsifmuhammad04@gmail.com" class="flex items-center gap-4 text-white group">
+                            <div class="w-14 h-14 rounded-xl bg-stone-800 flex items-center justify-center group-hover:bg-stone-700 transition-colors">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-500 mb-1">Email</p>
+                                <p class="text-lg font-medium">munsifmuhammad04@gmail.com</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://wa.me/923354287787" target="_blank" class="flex items-center gap-4 text-white group">
+                            <div class="w-14 h-14 rounded-xl bg-stone-800 flex items-center justify-center group-hover:bg-stone-700 transition-colors">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-500 mb-1">WhatsApp</p>
+                                <p class="text-lg font-medium">0335-4287787</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://instagram.com/khan_creative_05" target="_blank" class="flex items-center gap-4 text-white group">
+                            <div class="w-14 h-14 rounded-xl bg-stone-800 flex items-center justify-center group-hover:bg-stone-700 transition-colors">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-500 mb-1">Instagram</p>
+                                <p class="text-lg font-medium">@khan_creative_05</p>
+                            </div>
+                        </a>
+                        
+                        <div class="flex items-center gap-4 text-white">
+                            <div class="w-14 h-14 rounded-xl bg-stone-800 flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-stone-500 mb-1">Location</p>
+                                <p class="text-lg font-medium">Lahore, Pakistan <span class="text-stone-500">— Working Worldwide</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="reveal reveal-delay-2">
+                    <form id="contact-form" class="bg-stone-800/50 backdrop-blur rounded-3xl p-8 md:p-10">
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm text-stone-400 mb-3">Your Name</label>
+                                    <input type="text" required class="w-full bg-stone-800 border border-stone-700 rounded-xl px-5 py-4 text-white placeholder-stone-500 focus:border-stone-500 focus:outline-none transition-colors" placeholder="John Smith">
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-stone-400 mb-3">Email Address</label>
+                                    <input type="email" required class="w-full bg-stone-800 border border-stone-700 rounded-xl px-5 py-4 text-white placeholder-stone-500 focus:border-stone-500 focus:outline-none transition-colors" placeholder="john@company.com">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm text-stone-400 mb-3">Project Type</label>
+                                <select required class="w-full bg-stone-800 border border-stone-700 rounded-xl px-5 py-4 text-white focus:border-stone-500 focus:outline-none transition-colors appearance-none cursor-pointer">
+                                    <option value="" class="text-stone-500">Select a service</option>
+                                    <option value="social">Social Media Design</option>
+                                    <option value="branding">Brand Identity</option>
+                                    <option value="marketing">Marketing Graphics</option>
+                                    <option value="thumbnails">Thumbnails</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm text-stone-400 mb-3">Project Details</label>
+                                <textarea required rows="5" class="w-full bg-stone-800 border border-stone-700 rounded-xl px-5 py-4 text-white placeholder-stone-500 focus:border-stone-500 focus:outline-none transition-colors resize-none" placeholder="Tell me about your project, goals and timeline..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-premium w-full bg-white text-stone-900 py-4 rounded-xl font-medium text-lg hover:bg-stone-100 transition-colors flex items-center justify-center gap-3">
+                                Send Message
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 lg:px-12 border-t border-stone-800 bg-stone-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="text-xl font-semibold text-white">Munsif<span class="text-stone-600">.</span></span>
+                </div>
+                
+                <div class="flex items-center gap-6">
+                    <a href="https://instagram.com/khan_creative_05" target="_blank" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-stone-700 hover:text-white transition-all">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/923354287787" target="_blank" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-stone-700 hover:text-white transition-all">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:munsifmuhammad04@gmail.com" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center text-stone-400 hover:bg-stone-700 hover:text-white transition-all">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <p class="text-stone-500 text-sm">© 2024 Muhammad Munsif. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+        let menuOpen = false;
+        
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden');
+            
+            if (menuOpen) {
+                line1.style.transform = 'rotate(45deg) translate(4px, 4px)';
+                line2.style.transform = 'rotate(-45deg) translate(0, 0)';
+            } else {
+                line1.style.transform = 'rotate(0) translate(0, 0)';
+                line2.style.transform = 'rotate(0) translate(0, 0)';
+            }
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuOpen = false;
+                line1.style.transform = 'rotate(0) translate(0, 0)';
+                line2.style.transform = 'rotate(0) translate(0, 0)';
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-sm');
+            } else {
+                navbar.classList.remove('bg-white/90', 'backdrop-blur-xl', 'shadow-sm');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Reveal animations on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        revealOnScroll();
+
+        // Portfolio filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-stone-900', 'text-white');
+                    b.classList.add('bg-stone-100', 'text-stone-600');
+                });
+                btn.classList.remove('bg-stone-100', 'text-stone-600');
+                btn.classList.add('bg-stone-900', 'text-white');
+
+                // Filter items
+                const filter = btn.dataset.filter;
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.dataset.category === filter) {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        }, 200);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 200);
+                    }
+                });
+            });
+        });
+
+        // Add transition to portfolio items
+        portfolioItems.forEach(item => {
+            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const btn = contactForm.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            
+            btn.innerHTML = `
+                <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                Sending...
+            `;
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = `
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    Message Sent Successfully!
+                `;
+                btn.classList.add('bg-green-500', 'text-white');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('bg-green-500', 'text-white');
+                    btn.disabled = false;
+                    contactForm.reset();
+                }, 3000);
+            }, 1500);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Magnetic button effect (optional enhancement)
+        document.querySelectorAll('.btn-premium').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
+</body>
+</html>
