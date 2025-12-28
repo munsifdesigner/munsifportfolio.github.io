@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaOne — Modern Single Page Website</title>
+  <meta name="description" content="A modern, responsive single-page website template with smooth scrolling, gallery, pricing, FAQ, and contact form." />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fade-in-up 0.7s ease-out forwards;
+    }
+    @keyframes fade-in-up {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .shadow-soft {
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
+    }
+    .section-gradient {
+      background: radial-gradient(circle at top left, rgba(37,99,235,0.08), transparent 55%),
+                  radial-gradient(circle at bottom right, rgba(236,72,153,0.08), transparent 55%);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <header class="sticky top-0 z-40 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:py-4">
+      <a href="#top" class="inline-flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-tr from-blue-500 to-sky-400 text-lg font-bold text-white shadow-lg shadow-blue-500/40">N</span>
+        <span class="text-sm font-semibold tracking-wide text-slate-50 sm:text-base">Nova<span class="text-blue-400">One</span></span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-medium text-slate-200 md:flex">
+        <a href="#features" class="hover:text-white transition-colors">Features</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        <a href="#contact" class="rounded-full bg-gradient-to-r from-blue-500 to-sky-400 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-blue-500/40 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">Get Started</a>
+      </nav>
+      <button id="mobileMenuButton" class="inline-flex items-center justify-center rounded-md border border-slate-700 bg-slate-900/70 p-2 text-slate-200 hover:bg-slate-800 md:hidden" aria-label="Toggle navigation">
+        <svg id="mobileMenuIconOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+        <svg id="mobileMenuIconClose" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="border-t border-slate-800/80 bg-slate-950/95 px-4 py-3 md:hidden hidden">
+      <nav class="flex flex-col gap-2 text-sm font-medium text-slate-200">
+        <a href="#features" class="rounded-md px-2 py-2 hover:bg-slate-800/70">Features</a>
+        <a href="#about" class="rounded-md px-2 py-2 hover:bg-slate-800/70">About</a>
+        <a href="#pricing" class="rounded-md px-2 py-2 hover:bg-slate-800/70">Pricing</a>
+        <a href="#gallery" class="rounded-md px-2 py-2 hover:bg-slate-800/70">Gallery</a>
+        <a href="#faq" class="rounded-md px-2 py-2 hover:bg-slate-800/70">FAQ</a>
+        <a href="#contact" class="rounded-md px-2 py-2 hover:bg-slate-800/70">Contact</a>
+        <a href="#contact" class="mt-1 rounded-full bg-gradient-to-r from-blue-500 to-sky-400 px-4 py-2 text-center text-xs font-semibold text-white shadow-lg shadow-blue-500/40">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="section-gradient">
+    <section class="mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 pb-16 pt-10 sm:pt-16 md:flex-row md:items-stretch md:pb-20 lg:pt-20">
+      <div class="w-full md:w-1/2">
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-xs font-medium text-slate-300 shadow-soft fade-in-up">
+          <span class="inline-flex h-4 w-4 items-center justify-center rounded-full bg-emerald-500/90 text-[10px] text-white">✓</span>
+          Ready-to-use single page website template
+        </span>
+        <h1 class="mt-5 max-w-xl text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl fade-in-up" style="animation-delay: .05s">
+          Launch a polished website in minutes, not weeks.
+        </h1>
+        <p class="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base fade-in-up" style="animation-delay: .1s">
+          NovaOne is a modern, responsive single-page layout. Use it as a portfolio, landing page, or product site—customize the text and you're live.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center gap-3 fade-in-up" style="animation-delay: .15s">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-sky-400 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/40 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+            Get this template
+          </a>
+          <a href="#features" class="inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/70 px-5 py-2.5 text-sm font-medium text-slate-200 hover:bg-slate-800/80">
+            Explore features
+          </a>
+        </div>
+        <dl class="mt-8 grid grid-cols-3 gap-4 text-xs text-slate-300 sm:text-sm fade-in-up" style="animation-delay: .2s">
+          <div>
+            <dt class="font-semibold text-white">Responsive</dt>
+            <dd>Looks great on phones, tablets, and desktops.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-white">Modern stack</dt>
+            <dd>HTML, Tailwind CSS, and vanilla JavaScript.</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-white">Ready to ship</dt>
+            <dd>Sections for features, pricing, FAQ & contact.</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="w-full md:w-1/2">
+        <div class="relative mx-auto max-w-md rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-soft">
+          <div class="mb-3 flex items-center gap-1.5">
+            <span class="h-2.5 w-2.5 rounded-full bg-red-500/90"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-amber-400/90"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-emerald-500/90"></span>
+            <span class="ml-2 text-[11px] font-medium text-slate-400">index.html</span>
+          </div>
+          <pre class="max-h-72 overflow-auto rounded-xl bg-slate-950/80 p-4 text-[11px] leading-relaxed text-slate-200">
+&lt;!-- Single page website template --&gt;
+&lt;section id="features"&gt;
+  &lt;h2&gt;Beautiful by default&lt;/h2&gt;
+  &lt;p&gt;Just replace this text with your own.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;!-- Fully responsive, built with Tailwind --&gt;
+&lt;script&gt;
+  console.log("Ready to launch");
+&lt;/script&gt;</pre>
+          <div class="mt-4 grid grid-cols-3 gap-2 text-xs">
+            <div class="rounded-xl bg-slate-950/70 px-3 py-2">
+              <p class="text-[11px] uppercase tracking-wide text-slate-500">Setup</p>
+              <p class="mt-1 font-semibold text-slate-50">Drop-in ready</p>
+            </div>
+            <div class="rounded-xl bg-slate-950/70 px-3 py-2">
+              <p class="text-[11px] uppercase tracking-wide text-slate-500">Edits</p>
+              <p class="mt-1 font-semibold text-slate-50">&lt; 30 minutes</p>
+            </div>
+            <div class="rounded-xl bg-slate-950/70 px-3 py-2">
+              <p class="text-[11px] uppercase tracking-wide text-slate-500">Stack</p>
+              <p class="mt-1 font-semibold text-slate-50">HTML + JS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="border-y border-slate-800/70 bg-slate-950/40">
+      <div class="mx-auto max-w-6xl px-4 py-14 sm:py-16">
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Built-in sections you actually need.</h2>
+            <p class="mt-2 max-w-xl text-sm text-slate-300 sm:text-base">
+              Swap the copy, plug in your logo, and you have a production-ready single-page site with all the standard building blocks.
+            </p>
+          </div>
+          <div class="flex gap-3 text-xs text-slate-300 sm:text-sm">
+            <div class="flex items-center gap-1.5">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              Ready today
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+              No build tools
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <article class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-soft">
+            <div class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-blue-500/15 text-blue-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h8m-8 5h16" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-sm font-semibold text-white sm:text-base">Clean, semantic markup</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              Accessible HTML structure, semantic sections, and descriptive headings so search engines and assistive tech are happy.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-400">
+              <li>• Logical heading hierarchy</li>
+              <li>• Landmarks for navigation</li>
+              <li>• Keyboard-friendly controls</li>
+            </ul>
+          </article>
+
+          <article class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-soft">
+            <div class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-sm font-semibold text-white sm:text-base">Production-ready UI</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              Buttons, cards, navigation, and layout using Tailwind utility classes—easy to tweak for your brand.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-400">
+              <li>• Responsive nav & hero</li>
+              <li>• Feature & pricing grids</li>
+              <li>• FAQ, gallery, and contact sections</li>
+            </ul>
+          </article>
+
+          <article class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-soft">
+            <div class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/15 text-sky-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M4 4h16v10H4z" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-sm font-semibold text-white sm:text-base">Lightweight JavaScript</h3>
+            <p class="mt-2 text-sm text-slate-300">
+              Smooth scrolling, a responsive mobile menu, FAQ accordion, gallery modal, and form handling with no frameworks.
+            </p>
+            <ul class="mt-3 space-y-1.5 text-xs text-slate-400">
+              <li>• No build process required</li>
+              <li>• Easy to extend or remove features</li>
+              <li>• Fully contained in a single file</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="mx-auto max-w-6xl px-4 py-14 sm:py-16">
+      <div class="grid gap-10 md:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] md:items-center">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">A starter you don't have to fight with.</h2>
+          <p class="mt-3 text-sm text-slate-300 sm:text-base">
+            NovaOne is intentionally minimal: no build tooling, no frameworks, no complex folder structures. Just a single HTML file you can open and edit immediately.
+          </p>
+          <p class="mt-3 text-sm text-slate-300 sm:text-base">
+            It's perfect as a starting point for client sites, landing pages, product previews, personal portfolios, or documentation hubs.
+          </p>
+          <div class="mt-6 grid gap-4 text-sm text-slate-200 sm:grid-cols-3">
+            <div class="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3">
+              <p class="text-xs uppercase tracking-wide text-emerald-300">Time to launch</p>
+              <p class="mt-1 text-lg font-semibold text-emerald-100">Under 1 hour</p>
+            </div>
+            <div class="rounded-2xl border border-sky-500/40 bg-sky-500/10 px-4 py-3">
+              <p class="text-xs uppercase tracking-wide text-sky-300">Dependencies</p>
+              <p class="mt-1 text-lg font-semibold text-sky-100">Zero</p>
+            </div>
+            <div class="rounded-2xl border border-purple-500/40 bg-purple-500/10 px-4 py-3">
+              <p class="text-xs uppercase tracking-wide text-purple-300">File count</p>
+              <p class="mt-1 text-lg font-semibold text-purple-100">Single file</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-6 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-soft">
+          <h3 class="text-sm font-semibold text-white">What's included</h3>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex gap-3">
+              <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400"></span>
+              <span>Responsive hero section with primary and secondary calls to action.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-400"></span>
+              <span>Feature grid, about block, pricing table, gallery, FAQ, and contact form.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-pink-400"></span>
+              <span>Mobile navigation with smooth scrolling between page sections.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-300"></span>
+              <span>Minimal JavaScript enhancements that keep everything snappy and easy to understand.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="border-y border-slate-800/70 bg-slate-950/60">
+      <div class="mx-auto max-w-6xl px-4 py-14 sm:py-16">
+        <div class="text-center">
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Simple, transparent pricing.</h2>
+          <p class="mt-2 text-sm text-slate-300 sm:text-base">
+            Use these blocks as-is or adjust the copy and layout to reflect your own offers.
+          </p>
+        </div>
+        <div class="mt-8 grid gap-5 md:grid-cols-3">
+          <article class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+            <h3 class="text-sm font-semibold text-white sm:text-base">Starter</h3>
+            <p class="mt-1 text-sm text-slate-300">Perfect for quick prototypes and one-off landing pages.</p>
+            <p class="mt-5 text-3xl font-semibold text-white">$0<span class="text-sm font-normal text-slate-400"> / forever</span></p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Use this template without attribution</li>
+              <li>• Edit the text, colors, and layout freely</li>
+              <li>• Host on any static site provider</li>
+            </ul>
+            <button class="mt-5 inline-flex items-center justify-center rounded-full border border-slate-700 px-4 py-2 text-xs font-medium text-slate-200 hover:bg-slate-800/90">
+              Start customizing
+            </button>
+          </article>
+          <article class="relative flex flex-col rounded-2xl border border-blue-500/60 bg-slate-900/80 p-5 shadow-soft">
+            <div class="absolute -top-3 right-4 rounded-full bg-blue-500 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-white shadow-lg shadow-blue-500/40">
+              Popular
+            </div>
+            <h3 class="text-sm font-semibold text-white sm:text-base">Launch</h3>
+            <p class="mt-1 text-sm text-slate-300">Great base for a product, app, or SaaS marketing site.</p>
+            <p class="mt-5 text-3xl font-semibold text-white">$29<span class="text-sm font-normal text-slate-400"> / once</span></p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• All Starter features</li>
+              <li>• Additional page sections and variations</li>
+              <li>• Example content structure to adapt</li>
+              <li>• Priority layout guidance</li>
+            </ul>
+            <button class="mt-5 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-sky-400 px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-blue-500/40 hover:brightness-110">
+              Choose Launch
+            </button>
+          </article>
+          <article class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+            <h3 class="text-sm font-semibold text-white sm:text-base">Custom</h3>
+            <p class="mt-1 text-sm text-slate-300">Use this structure as a starting point for client work.</p>
+            <p class="mt-5 text-3xl font-semibold text-white">Your rate</p>
+            <ul class="mt-4 space-y-2 text-sm text-slate-300">
+              <li>• Replace the pricing with your own plans</li>
+              <li>• Keep the layout, forms, and JS behavior</li>
+              <li>• Ship production-ready client projects faster</li>
+            </ul>
+            <button class="mt-5 inline-flex items-center justify-center rounded-full border border-slate-700 px-4 py-2 text-xs font-medium text-slate-200 hover:bg-slate-800/90">
+              Add your offer
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="mx-auto max-w-6xl px-4 py-14 sm:py-16">
+      <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Gallery & screenshots.</h2>
+          <p class="mt-2 max-w-xl text-sm text-slate-300 sm:text-base">
+            Replace these blocks with screenshots of your product, project, or portfolio pieces.
+          </p>
+        </div>
+        <p class="text-xs text-slate-400 sm:text-sm">Tap any card to preview it in a larger modal.</p>
+      </div>
+
+      <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <button class="gallery-item group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-0 text-left shadow-soft" data-large="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <div class="aspect-video w-full bg-gradient-to-br from-blue-500/20 via-sky-400/10 to-slate-900"></div>
+          <div class="absolute inset-0 flex flex-col justify-between p-4">
+            <div class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200">
+              Layout preview
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">Hero & navigation</h3>
+              <p class="mt-1 text-xs text-slate-300">Responsive header, hero, and call-to-action block.</p>
+            </div>
+          </div>
+        </button>
+
+        <button class="gallery-item group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-0 text-left shadow-soft" data-large="https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <div class="aspect-video w-full bg-gradient-to-br from-emerald-500/20 via-emerald-400/10 to-slate-900"></div>
+          <div class="absolute inset-0 flex flex-col justify-between p-4">
+            <div class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200">
+              Feature cards
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">Feature overview</h3>
+              <p class="mt-1 text-xs text-slate-300">Grid of feature cards with icons and supporting text.</p>
+            </div>
+          </div>
+        </button>
+
+        <button class="gallery-item group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-0 text-left shadow-soft" data-large="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <div class="aspect-video w-full bg-gradient-to-br from-pink-500/20 via-rose-400/10 to-slate-900"></div>
+          <div class="absolute inset-0 flex flex-col justify-between p-4">
+            <div class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200">
+              Content
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">About & story</h3>
+              <p class="mt-1 text-xs text-slate-300">Explain your project and highlight its benefits.</p>
+            </div>
+          </div>
+        </button>
+
+        <button class="gallery-item group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-0 text-left shadow-soft" data-large="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <div class="aspect-video w-full bg-gradient-to-br from-amber-500/20 via-amber-400/10 to-slate-900"></div>
+          <div class="absolute inset-0 flex flex-col justify-between p-4">
+            <div class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200">
+              Pricing
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">Pricing table</h3>
+              <p class="mt-1 text-xs text-slate-300">Three-column pricing layout with highlighted plan.</p>
+            </div>
+          </div>
+        </button>
+
+        <button class="gallery-item group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-0 text-left shadow-soft" data-large="https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <div class="aspect-video w-full bg-gradient-to-br from-purple-500/20 via-violet-400/10 to-slate-900"></div>
+          <div class="absolute inset-0 flex flex-col justify-between p-4">
+            <div class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200">
+              FAQ
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">Questions & answers</h3>
+              <p class="mt-1 text-xs text-slate-300">Interactive accordion to handle common questions.</p>
+            </div>
+          </div>
+        </button>
+
+        <button class="gallery-item group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70 p-0 text-left shadow-soft" data-large="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200">
+          <div class="aspect-video w-full bg-gradient-to-br from-teal-500/20 via-cyan-400/10 to-slate-900"></div>
+          <div class="absolute inset-0 flex flex-col justify-between p-4">
+            <div class="inline-flex items-center rounded-full bg-slate-950/70 px-2 py-1 text-[11px] font-medium text-slate-200">
+              Contact
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-white">Contact form</h3>
+              <p class="mt-1 text-xs text-slate-300">Form block that validates and shows success state.</p>
+            </div>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <section id="faq" class="border-y border-slate-800/70 bg-slate-950/60">
+      <div class="mx-auto max-w-4xl px-4 py-14 sm:py-16">
+        <div class="text-center">
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Frequently asked questions.</h2>
+          <p class="mt-2 text-sm text-slate-300 sm:text-base">
+            Adjust, reorder, or replace these questions with things your visitors actually ask.
+          </p>
+        </div>
+        <div class="mt-8 divide-y divide-slate-800 rounded-2xl border border-slate-800 bg-slate-900/70">
+          <div class="faq-item">
+            <button class="flex w-full items-center justify-between px-4 py-4 text-left text-sm font-medium text-slate-100 hover:bg-slate-900/90">
+              <span>Can I use this website for commercial projects?</span>
+              <svg class="faq-icon h-4 w-4 text-slate-400 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-body hidden border-t border-slate-800 px-4 pb-4 pt-2 text-sm text-slate-300">
+              Yes. This template is intentionally generic so you can adapt it to client work, product launches, or personal projects. Always double-check any asset licenses (like images) you add.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="flex w-full items-center justify-between px-4 py-4 text-left text-sm font-medium text-slate-100 hover:bg-slate-900/90">
+              <span>What do I need to edit this template?</span>
+              <svg class="faq-icon h-4 w-4 text-slate-400 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-body hidden border-t border-slate-800 px-4 pb-4 pt-2 text-sm text-slate-300">
+              Any text editor will work. Open <code class="rounded bg-slate-800 px-1 py-0.5 text-xs text-slate-100">index.html</code>, search for the section you want to change, and replace the copy or elements.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="flex w-full items-center justify-between px-4 py-4 text-left text-sm font-medium text-slate-100 hover:bg-slate-900/90">
+              <span>Do I need to install Tailwind or Node.js?</span>
+              <svg class="faq-icon h-4 w-4 text-slate-400 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-body hidden border-t border-slate-800 px-4 pb-4 pt-2 text-sm text-slate-300">
+              No build step is required. Tailwind is loaded directly from a CDN. You can optionally switch to a compiled setup later if you want full control over the design system.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="flex w-full items-center justify-between px-4 py-4 text-left text-sm font-medium text-slate-100 hover:bg-slate-900/90">
+              <span>How do I connect the contact form?</span>
+              <svg class="faq-icon h-4 w-4 text-slate-400 transition-transform" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-body hidden border-t border-slate-800 px-4 pb-4 pt-2 text-sm text-slate-300">
+              Out of the box, the form only validates input and shows a success message. To route submissions, connect it to your preferred form service or a simple backend endpoint.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="mx-auto max-w-4xl px-4 py-14 sm:py-16">
+      <div class="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:items-start">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">Ready to make it yours?</h2>
+          <p class="mt-2 text-sm text-slate-300 sm:text-base">
+            Use this form block as a starting point for inquiries, project requests, or newsletter signups. It validates input and shows a subtle confirmation message.
+          </p>
+          <form id="contactForm" class="mt-6 space-y-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 shadow-soft" novalidate>
+            <div>
+              <label for="name" class="block text-xs font-medium text-slate-200">Name</label>
+              <input id="name" name="name" type="text" class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 outline-none ring-blue-500/0 placeholder:text-slate-500 focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/40" placeholder="Your name" required />
+              <p class="mt-1 hidden text-xs text-rose-400" data-error-for="name">Please enter your name.</p>
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-medium text-slate-200">Email</label>
+              <input id="email" name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 outline-none ring-blue-500/0 placeholder:text-slate-500 focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/40" placeholder="you@example.com" required />
+              <p class="mt-1 hidden text-xs text-rose-400" data-error-for="email">Please enter a valid email address.</p>
+            </div>
+            <div>
+              <label for="message" class="block text-xs font-medium text-slate-200">Message</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950/80 px-3 py-2 text-sm text-slate-100 outline-none ring-blue-500/0 placeholder:text-slate-500 focus:border-blue-500/80 focus:ring-2 focus:ring-blue-500/40" placeholder="Tell us a little about what you're building." required></textarea>
+              <p class="mt-1 hidden text-xs text-rose-400" data-error-for="message">Please share a short message.</p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <button type="submit" class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-sky-400 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/40 hover:brightness-110">
+                Send message
+              </button>
+              <p class="text-[11px] text-slate-400">
+                By submitting, you agree to being contacted back about this template.
+              </p>
+            </div>
+            <p id="formSuccess" class="mt-2 hidden text-xs text-emerald-400">
+              Thanks for reaching out! This is a demo form—wire it up to your own backend or form service to receive submissions.
+            </p>
+          </form>
+        </div>
+        <aside class="space-y-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-slate-300 shadow-soft">
+          <h3 class="text-sm font-semibold text-white">How to adapt this section</h3>
+          <p>
+            Replace this copy with details about how people should contact you: project inquiries, collaborations, or support.
+          </p>
+          <ul class="space-y-1.5 text-sm text-slate-300">
+            <li>• Use a form provider like Formspree or Basin.</li>
+            <li>• Or post the data to your own API endpoint.</li>
+            <li>• Update the success message to match your process.</li>
+          </ul>
+          <div class="mt-4 rounded-xl border border-slate-700 bg-slate-950/70 p-4">
+            <p class="text-xs font-medium uppercase tracking-wide text-slate-400">Example contact details</p>
+            <p class="mt-1 text-sm text-slate-200">hello@yourdomain.com</p>
+            <p class="text-xs text-slate-400">Mon–Fri · 9am–5pm in your time zone</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-950/95">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-tr from-blue-500 to-sky-400 text-[11px] font-semibold text-white">N</span>
+        <span>NovaOne single page template.</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="#top" class="hover:text-slate-200">Back to top</a>
+        <a href="#features" class="hover:text-slate-200">Features</a>
+        <a href="#pricing" class="hover:text-slate-200">Pricing</a>
+        <a href="#contact" class="hover:text-slate-200">Contact</a>
+      </div>
+      <p class="text-[11px] text-slate-500">
+        Built with HTML, Tailwind CSS, and vanilla JavaScript.
+      </p>
+    </div>
+  </footer>
+
+  <div id="galleryModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 px-4">
+    <div class="relative w-full max-w-3xl rounded-2xl border border-slate-707 bg-slate-950/95 p-3 sm:p-4">
+      <button id="galleryModalClose" class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-300 hover:bg-slate-800" aria-label="Close preview">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
+        </svg>
+      </button>
+      <img id="galleryModalImage" src="" alt="Gallery preview" class="mt-5 max-h-[70vh] w-full rounded-xl object-cover" />
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenuButton = document.getElementById("mobileMenuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileMenuIconOpen = document.getElementById("mobileMenuIconOpen");
+      const mobileMenuIconClose = document.getElementById("mobileMenuIconClose");
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", function () {
+          const isHidden = mobileMenu.classList.contains("hidden");
+          mobileMenu.classList.toggle("hidden", !isHidden);
+          mobileMenuIconOpen.classList.toggle("hidden", !isHidden);
+          mobileMenuIconClose.classList.toggle("hidden", isHidden);
+        });
+
+        mobileMenu.querySelectorAll("a[href^='#']").forEach(function (link) {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+            mobileMenuIconOpen.classList.remove("hidden");
+            mobileMenuIconClose.classList.add("hidden");
+          });
+        });
+      }
+
+      document.querySelectorAll("a[href^='#']").forEach(function (anchor) {
+        anchor.addEventListener("click", function (event) {
+          const targetId = this.getAttribute("href").slice(1);
+          if (!targetId) return;
+          const target = document.getElementById(targetId);
+          if (target) {
+            event.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      document.querySelectorAll(".faq-item").forEach(function (item) {
+        const button = item.querySelector("button");
+        const body = item.querySelector(".faq-body");
+        const icon = item.querySelector(".faq-icon");
+
+        button.addEventListener("click", function () {
+          const isOpen = !body.classList.contains("hidden");
+          document.querySelectorAll(".faq-body").forEach(function (otherBody) {
+            if (otherBody !== body) {
+              otherBody.classList.add("hidden");
+            }
+          });
+          document.querySelectorAll(".faq-icon").forEach(function (otherIcon) {
+            otherIcon.classList.remove("rotate-180");
+          });
+          if (isOpen) {
+            body.classList.add("hidden");
+            icon.classList.remove("rotate-180");
+          } else {
+            body.classList.remove("hidden");
+            icon.classList.add("rotate-180");
+          }
+        });
+      });
+
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      const galleryModal = document.getElementById("galleryModal");
+      const galleryModalImage = document.getElementById("galleryModalImage");
+      const galleryModalClose = document.getElementById("galleryModalClose");
+
+      if (galleryItems.length && galleryModal && galleryModalImage) {
+        galleryItems.forEach(function (item) {
+          item.addEventListener("click", function () {
+            const largeSrc = item.getAttribute("data-large");
+            if (largeSrc) {
+              galleryModalImage.src = largeSrc;
+              galleryModal.classList.remove("hidden");
+              document.body.classList.add("overflow-hidden");
+            }
+          });
+        });
+
+        function closeModal() {
+          galleryModal.classList.add("hidden");
+          galleryModalImage.src = "";
+          document.body.classList.remove("overflow-hidden");
+        }
+
+        galleryModalClose.addEventListener("click", closeModal);
+        galleryModal.addEventListener("click", function (event) {
+          if (event.target === galleryModal) {
+            closeModal();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && !galleryModal.classList.contains("hidden")) {
+            closeModal();
+          }
+        });
+      }
+
+      const contactForm = document.getElementById("contactForm");
+      const formSuccess = document.getElementById("formSuccess");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          let isValid = true;
+
+          function setError(id, condition) {
+            const input = document.getElementById(id);
+            const error = document.querySelector('[data-error-for="' + id + '"]');
+            if (!input || !error) return;
+            if (condition) {
+              isValid = false;
+              error.classList.remove("hidden");
+              input.classList.add("border-rose-500", "focus:border-rose-500/80", "focus:ring-rose-500/40");
+            } else {
+              error.classList.add("hidden");
+              input.classList.remove("border-rose-500", "focus:border-rose-500/80", "focus:ring-rose-500/40");
+            }
+          }
+
+          const nameValue = contactForm.name.value.trim();
+          const emailValue = contactForm.email.value.trim();
+          const messageValue = contactForm.message.value.trim();
+
+          setError("name", nameValue.length === 0);
+
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          setError("email", !emailPattern.test(emailValue));
+
+          setError("message", messageValue.length < 5);
+
+          if (isValid) {
+            contactForm.reset();
+            if (formSuccess) {
+              formSuccess.classList.remove("hidden");
+              formSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
+              setTimeout(function () {
+                formSuccess.classList.add("hidden");
+              }, 5000);
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
